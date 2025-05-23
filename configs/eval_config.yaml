@@ -1,0 +1,27 @@
+# Evaluation metrics to compute
+metrics:
+  - accuracy
+  - perplexity
+
+# Evaluate on target knowledge Q-R pairs
+eval_on_target: true
+
+# Evaluate on retained knowledge Q-R pairs
+eval_on_retained: true
+
+# Number of samples for qualitative/manual review
+num_qualitative_samples: 20
+
+# Path to save evaluation results
+eval_results_file: results/eval_results.json
+
+# Perplexity calculation method ('response_only', 'full_sequence')
+ppl_calc_method: response_only
+
+# Thresholds for success (set to null if not used)
+success_thresholds:
+  unlearned_acc: null
+  retained_ppl: null
+
+# Enable manual qualitative review
+enable_qualitative_review: true

@@ -1,0 +1,29 @@
+# Model and tokenizer names (HuggingFace hub)
+model_name: ./pretrained/Meta-Llama-3-8B-Instruct
+tokenizer_name: ./pretrained/Meta-Llama-3-8B-Instruct
+
+# Device to use ('cuda' for GPU, 'cpu' for CPU)
+device: cuda  # Use CUDA for NVIDIA A100
+
+# Max sequence length for tokenization
+max_seq_length: 512
+
+# Use 16-bit precision (fp16) for memory efficiency and speed
+use_fp16: true
+
+# Path to save/load model checkpoints
+checkpoint_dir: checkpoints/
+
+# Load from checkpoint (set to checkpoint file or null)
+resume_from_checkpoint: null
+
+# Number of top layers to train in discriminator (None = all)
+discriminator_train_top_n_layers: null  # e.g., 4
+
+# Use prompt-based or head-based discriminator
+discriminator_type: prompt  # options: 'prompt', 'head'
+
+# Special tokens for input formatting
+sep_token: "[SEP]"
+cls_token: "[CLS]"
+eos_token: "[EOS]"

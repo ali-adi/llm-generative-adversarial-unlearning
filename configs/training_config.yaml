@@ -1,0 +1,64 @@
+# Batch size for training (A100 can handle larger batch sizes)
+batch_size: 1
+
+# Use gradient accumulation (for large models/small GPUs)
+gradient_accumulation_steps: 32
+
+# Number of training epochs
+num_epochs: 3
+
+# Learning rate for both generator and discriminator
+learning_rate: 2e-5
+
+# Optimizer type (adamw recommended for transformers)
+optimizer: adamw
+
+# AdamW optimizer betas (default: [0.9, 0.999])
+optimizer_betas: [0.9, 0.999]
+
+# AdamW epsilon (default: 1e-8)
+optimizer_eps: 1e-8
+
+# Weight decay for optimizer
+weight_decay: 0.01
+
+# Learning rate scheduler type ('linear', 'cosine', etc.)
+lr_scheduler_type: linear
+
+# Number of warmup steps for scheduler
+lr_scheduler_warmup_steps: 500
+
+# Number of discriminator steps per generator step (GAN stability)
+discriminator_steps_per_generator_step: 1
+
+# Gradient clipping value (None to disable)
+max_grad_norm: 1.0
+
+# Label smoothing for discriminator (None to disable)
+label_smoothing: 0.1
+
+# Evaluation interval (in steps)
+eval_interval: 100
+
+# Model checkpoint save interval (in steps)
+save_interval: 500
+
+# Early stopping patience (None to disable)
+early_stopping_patience: 5
+
+early_stopping_min_delta: 0.001
+
+# Random seed for reproducibility
+random_seed: 42
+
+# Use mixed precision training (AMP)
+use_amp: true
+
+# Enable resource monitoring/logging
+enable_resource_monitoring: true
+
+# DataLoader workers for fast data loading (A100 can handle 4+)
+num_workers: 4
+
+# Pin memory for DataLoader (speeds up host-to-GPU transfer)
+pin_memory: true

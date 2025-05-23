@@ -1,0 +1,29 @@
+# Directory containing raw sampled data (C4, ArXiv, Wikipedia, StackExchange)
+raw_data_dir: data/raw/
+
+# Directory for processed/generated Q-R pairs
+processed_data_dir: data/processed/
+
+# File for target knowledge Q-R pairs (to be unlearned)
+target_qr_file: data/processed/arxiv/target_qr.jsonl
+
+# File for retained knowledge Q-R pairs (to be preserved)
+retained_qr_file: data/processed/arxiv/retained_qr.jsonl
+
+# Number of unique target Q-R pairs to generate (Questions.txt: 1k)
+num_target_qr: 1000
+
+# Number of unique retained Q-R pairs to generate (Questions.txt: 1k)
+num_retained_qr: 1000
+
+# Should we filter retained Q-R pairs for overlap with target knowledge?
+filter_retained_overlap: true
+
+# Should we store metadata (e.g., generation parameters) in a separate file?
+store_metadata: true
+
+# File format for Q-R pairs (jsonl recommended)
+file_format: jsonl
+
+# Random seed for reproducibility
+random_seed: 42
